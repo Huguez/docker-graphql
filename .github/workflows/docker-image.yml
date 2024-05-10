@@ -20,7 +20,7 @@ jobs:
     - name: Docker auth
       env:
         DOCKER_USER: ${{ secretes.DOCKER_USER }}
-        DOCKER_PASSWORD: ${{ secretes.DOCKER_PASSWORD }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run:
         echo "auth Docker"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
