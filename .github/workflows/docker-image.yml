@@ -25,6 +25,15 @@ jobs:
         echo "auth Docker"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         
+    - name: Build Docker Image
+      run: |
+        docker build -t huguez/docker-graphql:0.0.2 .
+    
+    - name: Push Docker Image
+      run: |
+        docker push huguez/docker-graphql:0.0.2
+      
+      
         
       
     # - name: Build the Docker image
